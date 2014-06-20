@@ -68,18 +68,20 @@
 -(void)animateViews:(id)argument
 {
     NSLog(@"you clicked animateViews");
-    /*
-    [self.view setBackgroundColor:[self.moreColors objectAtIndex:arc4random_uniform([self.moreColors count])]];
     for(int i=0; i<[self.barViews count]; i++){
         NSLog(@"I am going to say hello");
         UIView *tmpView=[self.barViews objectAtIndex:i];
-        UIColor *tmpColor=[self.barColors objectAtIndex:arc4random_uniform([self.barColors count])];
+        /*
+        tmpView.frame = CGRectMake(tmpView.frame.origin.x + 10.0f, tmpView.frame.origin.y  + 10.0f, tmpView.frame.size.width, tmpView.frame.size.height);
+        */
         
-        //tmpView.backgroundColor=[UIColor orangeColor];
-        tmpView.backgroundColor=tmpColor;
+        [UIView animateWithDuration:0.3 animations:^{
+            tmpView.frame = CGRectMake(tmpView.frame.origin.x + 50.0f, tmpView.frame.origin.y  + 50.0f, tmpView.frame.size.width, tmpView.frame.size.height);
+
+        }];
         
     }
-     */
+    
 }
 
 
