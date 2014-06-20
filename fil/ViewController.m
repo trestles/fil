@@ -71,14 +71,15 @@
     for(int i=0; i<[self.barViews count]; i++){
         NSLog(@"I am going to say hello");
         UIView *tmpView=[self.barViews objectAtIndex:i];
-        /*
-        tmpView.frame = CGRectMake(tmpView.frame.origin.x + 10.0f, tmpView.frame.origin.y  + 10.0f, tmpView.frame.size.width, tmpView.frame.size.height);
-        */
         
+        tmpView.frame = CGRectMake(tmpView.frame.origin.x + 10.0f, tmpView.frame.origin.y  + 10.0f, tmpView.frame.size.width, tmpView.frame.size.height);
+        
+        /*
         [UIView animateWithDuration:0.3 animations:^{
             tmpView.frame = CGRectMake(tmpView.frame.origin.x + 50.0f, tmpView.frame.origin.y  + 50.0f, tmpView.frame.size.width, tmpView.frame.size.height);
 
         }];
+         */
         
     }
     
