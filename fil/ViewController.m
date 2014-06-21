@@ -13,7 +13,7 @@
   @property NSMutableArray *moreColors;
   @property NSMutableArray *barViews;
   @property NSMutableArray *barColors;
-
+//-(void)viewsDoCollide:UIVew UIview:view2;
 @end
 
 @implementation ViewController
@@ -72,19 +72,22 @@
         NSLog(@"I am going to say hello");
         UIView *tmpView=[self.barViews objectAtIndex:i];
         
-        tmpView.frame = CGRectMake(tmpView.frame.origin.x + 10.0f, tmpView.frame.origin.y  + 10.0f, tmpView.frame.size.width, tmpView.frame.size.height);
-        
         /*
+        tmpView.frame = CGRectMake(tmpView.frame.origin.x + 10.0f, tmpView.frame.origin.y  + 10.0f, tmpView.frame.size.width + 30.0f, tmpView.frame.size.height);
+        */
+        
+        
         [UIView animateWithDuration:0.3 animations:^{
-            tmpView.frame = CGRectMake(tmpView.frame.origin.x + 50.0f, tmpView.frame.origin.y  + 50.0f, tmpView.frame.size.width, tmpView.frame.size.height);
+            tmpView.frame = CGRectMake(tmpView.frame.origin.x + arc4random_uniform(100), tmpView.frame.origin.y  + arc4random_uniform(100), tmpView.frame.size.width, tmpView.frame.size.height);
+            
 
         }];
-         */
-        
+        //viewsDoCollide tmpView, view2:tmpView;
+        //if(viewsDidCollide)
+                
     }
     
 }
-
 
 -(void)aMethod:(id)argument
 {
@@ -104,6 +107,8 @@
 -(void)create
 {
     /*
+    moved to a private property
+     
     NSMutableArray *myColors=[[NSMutableArray alloc] init];
     [myColors addObject:[UIColor redColor]];
     [myColors addObject:[UIColor orangeColor]];
@@ -113,9 +118,9 @@
     self.barViews=[[NSMutableArray alloc] init];
 
     
-    for(int i=0; i<20; i++){
-        //NSLog(@"here I am");
-        Myview *aView=[[Myview alloc] initWithFrame:(CGRectMake(20, i*25, 300, 20)) ];
+    for(int i=0; i<60; i++){
+        NSLog(@"here I am  %i", i);
+        Myview *aView=[[Myview alloc] initWithFrame:(CGRectMake(20, i*25, 300, 10)) ];
         UIColor *tmpColor=[self.barColors objectAtIndex:arc4random_uniform([self.barColors count])];
         aView.backgroundColor=tmpColor;
         [aView myPublicMethod];
